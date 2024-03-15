@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import { Context } from "../App";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -20,6 +20,9 @@ export default function HomePage() {
           `https://api.rawg.io/api/games?key=bab70de9f3dd49d38647cec266113fac&search=${searchQuery}`,
           { signal: controller.signal }
         );
+        if (!res.ok) {
+          throw new Error("Failed to fetch games");
+        }
         const data = await res.json();
         setGames(data.results);
         setIsLoading(false);
@@ -61,6 +64,7 @@ export default function HomePage() {
           </option>
         </select>
       </div>
+
       {searchQuery.length === 0 ? (
         <h1 className="heading">
           Popular<span className="heading-span">Games</span>
@@ -72,6 +76,7 @@ export default function HomePage() {
           </h1>
         </>
       )}
+
       {isLoading ? (
         <div className="loader-container">
           <Loader />
@@ -119,7 +124,6 @@ export default function HomePage() {
           ))}
         </section>
       )}
-      <Outlet />
     </>
   );
 }

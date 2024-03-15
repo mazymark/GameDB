@@ -41,7 +41,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="games/:id" element={<GameDetails />} />
-
           <Route
             path="/newgames"
             element={

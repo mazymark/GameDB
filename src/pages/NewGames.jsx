@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
 import Logo from "../components/Logo";
 import Links from "../components/Links";
@@ -103,7 +103,6 @@ export default function NewGames() {
           ))}
         </section>
       )}
-      <Outlet />
     </>
   );
 }
