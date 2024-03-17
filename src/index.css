@@ -414,15 +414,10 @@ input[type="search"]::placeholder {
   color: #fff;
   font-size: 1.4rem;
   font-weight: 700;
-  transition: 0.2s all ease-in;
 }
 
 .nav-link-open-menu.isActive {
   color: #ff1717;
-}
-
-.nav-link-open-menu:hover {
-  transform: scale(1.1);
 }
 
 .links-open-menu {
