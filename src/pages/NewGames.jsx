@@ -94,7 +94,7 @@ export default function NewGames() {
               <AddIcon
                 onClick={() => handleAddGame(game)}
                 className="wishlist-button"
-                icon={faHeart}
+                sx={{ fontSize: 30 }}
               />
               <Link to={`/newgames/${game.id}`}>
                 <h5 className="see-more-button">See More</h5>
