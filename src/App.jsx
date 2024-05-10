@@ -7,12 +7,14 @@ import GameDetails from "./pages/GameDetails";
 import WishList from "./pages/WishList";
 import Loader from "./components/Loader";
 const NewGames = React.lazy(() => import("./pages/NewGames"));
-const storedItems = JSON.parse(localStorage.getItem("wishlist"));
 export const Context = createContext();
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [wishList, setWishList] = useState(storedItems || []);
+  const [wishList, setWishList] = useState(() => {
+    const storedItems = JSON.parse(localStorage.getItem("wishlist"));
+    return storedItems || [];
+  });
   const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
