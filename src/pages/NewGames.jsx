@@ -4,7 +4,6 @@ import Loader from "../components/Loader";
 import Logo from "../components/Logo";
 import Links from "../components/Links";
 import AddIcon from "@mui/icons-material/Add";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Context } from "../App";
 import NavCollapse from "../components/NavCollapse";
 
